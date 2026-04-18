@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Bebas+Neue&family=Anton&family=Oswald:wght@700&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #b85c45;
+    --primary-light: #c97060;
+    --primary-muted: #e8c4b8;
+    --secondary-color: #fdfaf8;
+    --accent-color: #b85c45;
+    --background-color: #fdfaf8;
+    --text-color: #5a5a5a;
+    --text-dark: #2e2e2e;
+    --text-light: #8a8a8a;
+    --border-color: #ece8e4;
+    --surface-color: #f7f4f1;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-logo: 'VT323', monospace;
+  }
+}

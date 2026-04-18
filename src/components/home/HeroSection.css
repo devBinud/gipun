@@ -1,0 +1,370 @@
+/* ================================
+   HERO WRAPPER
+   ================================ */
+.hero-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ================================
+   MOBILE LAYOUT (default)
+   Image on top, content below
+   ================================ */
+.hero-mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-desktop {
+  display: none;
+}
+
+/* Image block */
+.hero-mobile-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 59vw;      /* proportional to screen width */
+  min-height: 200px;
+  max-height: 320px;
+  overflow: hidden;
+}
+
+.hero-mobile-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.hero-mobile-img.active {
+  opacity: 1;
+}
+
+/* Content block below image */
+.hero-mobile-content {
+  padding: 1.1rem 1.25rem 1.6rem;
+  text-align: center;
+  transition: background-color 0.7s ease;
+  position: relative;
+}
+
+/* Subtle top fade from image into content */
+.hero-mobile-content::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, var(--mobile-bg, #edddd0));
+  pointer-events: none;
+}
+
+/* ================================
+   SHARED TEXT STYLES
+   ================================ */
+.hero-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b85c45;
+  margin-bottom: 0.3rem;
+  font-family: var(--font-body);
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-family: 'VT323', monospace;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #3a2e28;
+  margin: 0 0 0.25rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #7a6e68;
+  margin: 0.3rem 0 0.1rem;
+}
+
+.hero-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3a2e28;
+  margin: 0 0 0.85rem;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #b85c45;
+  color: #fdfaf8;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.hero-cta:hover {
+  background: #b85c45;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   DOTS - MOBILE
+   ================================ */
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 5px 10px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-dots-mobile {
+  justify-content: center;
+  margin: 8px auto 12px;
+  width: fit-content;
+}
+
+.hero-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(20, 10%, 76%);
+  /* background: #b85c45; */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s ease;
+  flex-shrink: 0;
+}
+
+.hero-dot:hover {
+  background: #a8a0a0;
+}
+
+.hero-dot.active {
+  width: 20px;
+  height: 6px;
+  border-radius: 20px;
+  background: #b85c45;
+  border: none;
+}
+
+/* ================================
+   SMALL PHONES
+   ================================ */
+@media (max-width: 360px) {
+  .hero-mobile-image-wrap {
+    height: 60vw;
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-price {
+    font-size: 1.75rem;
+  }
+
+  .hero-mobile-content {
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+/* ================================
+   DESKTOP (768px+)
+   Switch to full overlay layout
+   ================================ */
+@media (min-width: 768px) {
+  .hero-mobile {
+    display: none;
+  }
+
+  .hero-desktop {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+  }
+
+  /* Each Slide */
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .hero-bg-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 72%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Gradient fade left */
+  .hero-slide-fade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      var(--slide-bg, #edddd0) 26%,
+      rgba(237, 221, 208, 0.55) 46%,
+      transparent 64%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Desktop card */
+  .hero-card {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 240px;
+    text-align: center;
+    background: rgba(253, 250, 248, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    padding: 1.6rem 1.8rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Desktop text overrides */
+  .hero-tag {
+    color: #b85c45;
+    opacity: 1;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    color: #2e2e2e;
+    text-shadow: none;
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    color: #8a8a8a;
+  }
+
+  .hero-price {
+    font-size: 2rem;
+    color: #2e2e2e;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: none;
+  }
+
+  .hero-cta {
+    background: #b85c45;
+    color: #fdfaf8;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    padding: 0.6rem 1.8rem;
+  }
+
+  .hero-cta:hover {
+    background: #b85c45;
+    color: #ffffff;
+  }
+
+  /* Dots back to absolute on desktop */
+  .hero-dots-desktop {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 5px 10px;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .hero-dots-mobile {
+    display: none;
+  }
+
+  .hero-dot {
+    background: #d0c8c4;
+    border: none;
+  }
+
+  .hero-dot:hover {
+    background: #b0a8a4;
+  }
+
+  .hero-dot.active {
+    background: #b85c45;
+    border: none;
+  }
+}
+
+/* ================================
+   LARGE DESKTOP (1200px+)
+   ================================ */
+@media (min-width: 1200px) {
+  .hero-card {
+    left: 7%;
+    width: 275px;
+    padding: 1.8rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-price {
+    font-size: 2.3rem;
+  }
+}

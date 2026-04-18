@@ -1,0 +1,28 @@
+.home-page {
+  margin: 0;
+  padding: 0;
+  background: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* Hero gets side padding so border-radius shows */
+.hero-wrapper {
+  padding: 0 16px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    padding: 0 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-wrapper {
+    padding: 0 0px 0;
+  }
+}

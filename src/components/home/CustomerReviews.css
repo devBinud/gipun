@@ -1,0 +1,244 @@
+.customer-reviews {
+  padding: 50px 40px;
+  background: white;
+  overflow: hidden;
+}
+
+/* Header */
+.cr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.cr-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b85c45;
+  margin: 0 0 6px;
+  font-family: var(--font-body);
+}
+
+.customer-reviews h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+/* Chevron controls */
+.cr-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.cr-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid #e0dbd6;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cr-arrow svg {
+  width: 18px;
+  height: 18px;
+  color: #2e2e2e;
+}
+
+.cr-arrow:hover:not(:disabled) {
+  background: #b85c45;
+  border-color: #b85c45;
+}
+
+.cr-arrow:hover:not(:disabled) svg {
+  color: white;
+}
+
+.cr-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Scrollable track */
+.cr-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+}
+
+/* Card */
+.cr-card {
+  flex: 0 0 calc(33.333% - 11px);
+  background: #faf7f4;
+  border: 1px solid #ece8e4;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cr-quote {
+  font-size: 3rem;
+  line-height: 1;
+  color: #b85c45;
+  font-family: var(--font-heading);
+  opacity: 0.5;
+  margin-bottom: -8px;
+}
+
+.cr-text {
+  font-size: 0.88rem;
+  color: #5a5a5a;
+  line-height: 1.7;
+  font-family: var(--font-body);
+  flex: 1;
+}
+
+/* Stars */
+.cr-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.cr-stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Product tag */
+.cr-product {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #b85c45;
+  background: #fdf3f0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  width: fit-content;
+}
+
+/* Author */
+.cr-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid #ece8e4;
+}
+
+.cr-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cr-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.cr-location {
+  font-size: 0.72rem;
+  color: #9a9a9a;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+/* Dot indicators */
+.cr-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.cr-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d8d0ca;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.cr-dot.active {
+  width: 20px;
+  border-radius: 4px;
+  background: #b85c45;
+}
+
+/* Tablet - 2 cards */
+@media (max-width: 1024px) {
+  .customer-reviews {
+    padding: 40px 30px;
+  }
+
+  .cr-card {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+/* Mobile - 1 card */
+@media (max-width: 640px) {
+  .customer-reviews {
+    padding: 32px 16px;
+  }
+
+  .cr-card {
+    flex: 0 0 100%;
+  }
+
+  .customer-reviews h2 {
+    font-size: 1.3rem;
+  }
+
+  .cr-header {
+    margin-bottom: 20px;
+  }
+
+  .cr-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cr-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-reviews {
+    padding: 24px 12px;
+  }
+
+  .cr-card {
+    padding: 18px;
+  }
+}

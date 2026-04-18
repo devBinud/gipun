@@ -1,0 +1,135 @@
+.recommended-products {
+  padding: 50px 40px;
+  background: #faf7f4;
+}
+
+/* Header */
+.recommended-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.recommended-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b85c45;
+  margin: 0 0 6px;
+  font-family: var(--font-body);
+}
+
+.recommended-products h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  font-family: var(--font-heading);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.recommended-view-all {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  text-decoration: none;
+  border: 1.5px solid #2e2e2e;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+.recommended-view-all:hover {
+  background: #b85c45;
+  border-color: #b85c45;
+  color: white;
+}
+
+/* Desktop — horizontal scroll, 5 visible, 6th peeks */
+.recommended-grid {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.recommended-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.recommended-grid .product-card {
+  flex: 0 0 calc((100% - 60px) / 5.3);
+  min-width: calc((100% - 60px) / 5.3);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .recommended-products {
+    padding: 40px 30px;
+  }
+
+  .recommended-products h2 {
+    font-size: 1.5rem;
+  }
+
+  .recommended-grid .product-card {
+    flex: 0 0 calc((100% - 40px) / 3.3);
+    min-width: calc((100% - 40px) / 3.3);
+  }
+}
+
+/* Mobile — 2-column grid */
+@media (max-width: 768px) {
+  .recommended-products {
+    padding: 32px 16px;
+  }
+
+  .recommended-header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .recommended-products h2 {
+    font-size: 1.2rem;
+  }
+
+  .recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    overflow-x: unset;
+    padding-bottom: 0;
+  }
+
+  .recommended-grid .product-card {
+    flex: unset;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .recommended-products {
+    padding: 24px 12px;
+  }
+
+  .recommended-products h2 {
+    font-size: 1.1rem;
+  }
+
+  .recommended-view-all {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .recommended-grid {
+    gap: 8px;
+  }
+}

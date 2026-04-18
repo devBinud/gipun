@@ -1,0 +1,99 @@
+.topbar {
+  background: #3a3330;
+  width: 100%;
+  z-index: 1001;
+  position: relative;
+}
+
+.topbar-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0.5rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left - Social Icons */
+.topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar-social a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b0a8a3;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.topbar-social a:hover {
+  color: #e8e0db;
+}
+
+.topbar-social svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.topbar-social span {
+  display: inline;
+}
+
+/* Right - Offer */
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-tag {
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: #c9bfb9;
+  letter-spacing: 0.5px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .topbar-container {
+    padding: 0.45rem 20px;
+  }
+
+  .topbar-social span {
+    display: none;
+  }
+
+  .topbar-social a {
+    gap: 0;
+  }
+
+  .topbar-social svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .topbar-tag {
+    font-size: 0.68rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .topbar-container {
+    padding: 0.4rem 16px;
+  }
+
+  .topbar-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.3px;
+  }
+}

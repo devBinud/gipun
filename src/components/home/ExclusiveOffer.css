@@ -1,0 +1,119 @@
+.exclusive-offer {
+  padding: 50px 40px;
+  background: white;
+  margin: 0;
+}
+
+/* Header */
+.offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.offer-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #b85c45;
+  margin: 0 0 6px;
+  font-family: var(--font-body);
+}
+
+.offer-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2e2e2e;
+  font-family: var(--font-heading);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.view-all-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  text-decoration: none;
+  border: 1.5px solid #2e2e2e;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+.view-all-btn:hover {
+  background: #b85c45;
+  border-color: #b85c45;
+  color: white;
+}
+
+/* Desktop — horizontal scroll, 5 cards visible, 6th peeks */
+.offer-products {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.offer-products::-webkit-scrollbar {
+  display: none;
+}
+
+.offer-products .product-card {
+  flex: 0 0 calc((100% - 60px) / 5.3);
+  min-width: calc((100% - 60px) / 5.3);
+}
+
+/* Mobile — 2-column grid */
+@media (max-width: 768px) {
+  .exclusive-offer {
+    padding: 32px 16px;
+  }
+
+  .offer-header {
+    margin-bottom: 20px;
+  }
+
+  .offer-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .offer-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    overflow-x: unset;
+    padding-bottom: 0;
+  }
+
+  .offer-products .product-card {
+    flex: unset;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .exclusive-offer {
+    padding: 24px 12px;
+  }
+
+  .offer-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .view-all-btn {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+
+  .offer-products {
+    gap: 8px;
+  }
+}
