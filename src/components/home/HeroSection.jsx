@@ -2,9 +2,9 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './HeroSection.css';
 
-import s1 from "../../assets/images/sliders/s11.png"
-import s2 from "../../assets/images/sliders/s2.png"
-import s3 from "../../assets/images/sliders/s3.png"
+import s1 from "../../assets/images/sliders/s11.jpg"
+import s2 from "../../assets/images/sliders/s2.jpg"
+import s3 from "../../assets/images/sliders/s3.jpg"
 
 const slides = [
   {
